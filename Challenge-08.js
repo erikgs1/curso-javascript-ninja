@@ -15,7 +15,7 @@ o resultado no console, com a frase:
 */
 var num1 = 10;
 var num2 = 10;
-console.log('A soma de ' + num1 + ' e ' + num2 + ' é igual a ' + num1 + num2 + );
+console.log('A soma de ' + num1 + ' e ' + num2 + ' é igual a ' + num1 + num2 );
 
 
 /*
@@ -29,7 +29,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName(){
-  console.log(Erik Gomes);
+  console.log('Erik Gomes');
 }
 
 /*
@@ -76,7 +76,7 @@ function calculator (operator){
         result = num1 % num2;
         break;
       default :
-         return 'Operação invalida.'
+         return 'Operação invalida.';
     }
     return 'Resultado da operação: ' + num1 + ' ' + operator + ' ' + num2 + ' = ' + result + '.';
   };
