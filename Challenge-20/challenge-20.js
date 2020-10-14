@@ -20,7 +20,7 @@
     // var username = prompt('Qual o seu nome?') || 'Desconhecido';
     if( !username )
         username = 'Desconhecido';
-    alert('Bem vindo' + username);
+    alert('Bem vindo ' + username);
     
 
     /*
@@ -51,7 +51,7 @@
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    var $button = document.queryCommandState('button');
+    var $button = document.querySelector('button');
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
@@ -83,6 +83,20 @@
         - "Não enviado."
     */
     
+    $button.addEventListener('click', function(event){
+        event.preventDefault();
+        if (!$inputUsername.value)
+            return alert('Preencha o nome de usuário!');
+        if (!$inputEmail.value)
+            return alert ('Preencha o email!');
+        if(!isValidEmail ($inputEmail))
+            return alert ('Entre com um email válido');
+        if (!$message.value)
+            return alert ('Preencha a menssagem');
+        if (!confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Não enviado.');
+        return alert ('Enviado com sucesso!');
+    }, false);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -108,5 +122,7 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+   function isValidEmail( email ){
+    return /^[w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
+   }
 })(window,document);
