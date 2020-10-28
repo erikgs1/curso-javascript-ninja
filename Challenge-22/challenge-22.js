@@ -42,7 +42,7 @@
        console.log(args);
        Array.prototype.reduce.call(args, 
         function(accumulated, actualItem){
-           return accumulated + actualItem;
+           return Number(accumulated) +  Number(actualItem);
        }
     );
    }
